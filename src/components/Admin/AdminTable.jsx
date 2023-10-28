@@ -64,7 +64,7 @@ function AdminTable() {
                             <input type="checkbox" />
                         </div>
                         <div className="grid-item test">1</div>
-                        <div className="grid-item">This is a title</div>
+                        <div className="grid-item">This is a title TXT</div>
                         <div className="grid-item action-button-container">
                             <button className="action-button edit">
                                 Edit
