@@ -1,0 +1,85 @@
+.blog-content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+
+}
+
+.blog-item-container {
+    width: 750px;
+    display: flex;
+    border: 0.5px rgb(204, 204, 204) solid;
+    border-radius: 5px;
+    margin-top: 2rem;
+    color: black;
+    cursor: pointer;
+    height: 200px;
+
+}
+
+.blog-item-container {
+    transition: all 0.5s ease;
+}
+
+
+
+.blog-item-container:hover {
+    transition: all 0.5s ease;
+    transform: translateY(-8px);
+}
+
+.blog-item-container img {
+    transition: all 0.5s ease;
+}
+
+
+.blog-item-container:hover img {
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+}
+
+
+
+.blog-overview-left-container {
+    width: 250px;
+    border-radius: 5px 0 0 5px;
+    overflow: hidden;
+
+}
+
+.blog-overview-right-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.blog-overview-right-container h2{
+    margin-top:0.5rem;
+    margin-bottom:1.2rem;
+}
+
+.blog-overview-left-container img {
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.blog-overview-top-container {
+    padding: 0 2rem;
+}
+
+
+.blog-overview-bottom-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    margin: 1.3rem 0;
+}
+
+.blog-overview-bottom-container p~p {
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,180 @@
+.main-header {
+    margin: 1rem 0 3rem 0;
+}
+
+button,
+input {
+    cursor: pointer;
+}
+
+/*
+MAIN TABLE CONTAINER
+*/
+
+.admin-table-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-table-container * {
+    font-size: 1rem;
+}
+
+/*
+GRID CONTAINER
+*/
+
+.grid-container {
+    min-width: 368px;
+    width: 967px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.admin-table-header.row {
+    background-color: #8f8f8f;
+    height: 2rem;
+    border-radius: 10px 10px 0 0;
+    color: white;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 2fr;
+}
+
+
+.table-body.row .grid-item {
+    height: 2.3rem;
+
+}
+
+.grid-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* border:1px solid black; */
+}
+
+
+.table-body.row .grid-item~.grid-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 1px;
+    height: 1.4rem;
+    background-color: rgb(141, 141, 141);
+}
+
+.grid-container .table-body.row:nth-child(odd) {
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+/*
+CHECKBOXES AND BUTTONS OF TABLE
+*/
+
+.grid-item.checkbox-container {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-item.action-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.grid-item.action-button-container button:first-child {
+    margin-left: 1rem;
+    margin-right: 0.8rem;
+}
+
+.grid-item.action-button-container .action-button.edit {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: underline;
+    transition: all 0.1s ease;
+}
+
+.grid-item.action-button-container .action-button.edit:hover {
+    color: #0366d1;
+}
+
+.grid-item.action-button-container .action-button.delete {
+    background-color: #dc3545;
+    color: white;
+    border-radius: 4px;
+    height: 1.7rem;
+    border-color: transparent;
+    transition: all 0.1s ease;
+}
+
+
+.grid-item.action-button-container .action-button.delete:hover {
+    background-color: #af2331;
+    transition: all 0.3s ease;
+
+}
+
+.grid-item:not(.grid-item.checkbox-container):not(.grid-item.action-button-container) {
+    padding-left: 1rem;
+}
+
+
+
+/*
+BOTTOM CONTAINER AND BUTTONS
+*/
+
+.admin-table-bottom-container {
+    margin-top: 2rem;
+    display: flex;
+}
+
+.action-button-delete-all {
+    border: 1px solid #cecece;
+    color: #cecece;
+    border-radius: 4px;
+    padding: 0.5rem 0.7rem;
+    margin-left: 35px;
+    background-color: transparent;
+    cursor: default;
+}
+
+.action-button-delete-all.active {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 4px;
+    padding: 0.5rem 0.7rem;
+    margin-left: 35px;
+    background-color: transparent;
+    transition: all 0.1s ease;
+
+}
+
+.action-button-delete-all.active:hover {
+    background-color: #af2331;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.action-button-new-post {
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    border: transparent;
+    padding: 0.5rem 0.7rem;
+    margin-left: auto;
+    margin-right: 35px;
+    transition: all 0.1s ease;
+}
+
+.action-button-new-post:hover {
+    background-color: #0366d1;
+    transition: all 0.3s ease;
+}

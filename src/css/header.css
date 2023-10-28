@@ -1,0 +1,41 @@
+header {
+    background-color:#2d2d32;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1624px;
+}
+
+.header-logo,
+.nav-ul {
+    display: flex;
+    align-items: center;
+}
+
+header a {
+    color: white;
+}
+
+.logo-container img {
+    width: 50px;
+    margin-right: 1.5rem;
+}
+
+.nav-ul li {
+    list-style-type: none;
+    margin-left: 3rem;
+}
+
+.header-container-left,
+.header-container-right {
+    padding: 0.9rem 1.5rem;
+
+}
