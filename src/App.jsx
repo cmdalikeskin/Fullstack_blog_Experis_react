@@ -1,11 +1,9 @@
 import './css/index.css'
-import {Routes, Route } from "react-router-dom"
-
+import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Home from './components/Home'
 import BlogsMain from './components/Blogs/BlogsMain'
 import Blogpage from './components/Blogs/Blogpage'
-import AdminMain from './components/Admin/AdminMain'
 import DeleteThisLater from './components/DeleteThisLater'
 import AdminTable from './components/Admin/AdminTable'
 
@@ -16,14 +14,16 @@ function App() {
   return (
     <>
       <Navbar />
-      
-      <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/' element={<AdminTable />} />
-        <Route path='/blogs' element={<BlogsMain />} />
-        <Route path='/blogs/:slug' element={<Blogpage />} />
-        <Route path='/admin' element={<AdminMain />} />
-      </Routes>
+
+
+        <Routes>
+          {/* <Route path='/' element={<Home />} /> */}
+          <Route path='/' element={<AdminTable />} />
+          <Route path='/blogs' element={<BlogsMain />} />
+          <Route path='/blogs/:slug' element={<Blogpage />} />
+          <Route path='/admin' element={<AdminTable />} />
+        </Routes>
+
 
       <DeleteThisLater />
       <Footer />

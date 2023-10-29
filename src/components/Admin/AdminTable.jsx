@@ -1,44 +1,20 @@
+import { useState } from "react";
 import "../../css/AdminTable.css"
 import "../../css/index.css"
-
+import { blogContextData } from "../BlogContext"
+import AdminTableItem from "./AdminTableItem";
 
 function AdminTable() {
 
+    //Data retrieved using axios.get inside the CreateContext component
+    const dataContext = blogContextData();
 
-
+    const deleteSingleItem = () => {
+        console.log("tedst")
+    }
 
     return (
         <>
-            {/* <div class="divTable">
-                <div class="divTableBody">
-                    <div class="divTableRow">
-                        <div class="divRowOne">Head1 </div>
-                        <div class="divRowTwo">Head2</div>
-                        <div class="divRowThree">Head3</div>
-                        <div class="divRowFour">Head4</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divRowOne">a</div>
-                        <div class="divRowTwo">b</div>
-                        <div class="divRowThree">c</div>
-                        <div class="divRowFour">d</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divRowOne">a</div>
-                        <div class="divRowTwo">b</div>
-                        <div class="divRowThree">c</div>
-                        <div class="divRowFour">d</div>
-                    </div>
-                    <div class="divTableRow">
-                        <div class="divRowOne">a</div>
-                        <div class="divRowTwo">b</div>
-                        <div class="divRowThree">c</div>
-                        <div class="divRowFour">d</div>
-                    </div>
-
-                </div>
-            </div> */}
-
             <div className="main-header container">
                 <h1>
                     Database
@@ -57,9 +33,22 @@ function AdminTable() {
                     </div>
                     {/* TABLE HEADER END*/}
 
+                    {dataContext.map(data => (
+
+                        < AdminTableItem
+                            key={data.id}
+                            blogData={data}
+                            id={data.id}
+                            title={data.title}
+                            deleteSingleItem={deleteSingleItem}
+                        />
+
+
+
+                    ))}
 
                     {/* Start of ROW */}
-                    <div className="table-body row">
+                    {/* <div className="table-body row">
                         <div className="grid-item checkbox-container">
                             <input type="checkbox" />
                         </div>
@@ -74,28 +63,26 @@ function AdminTable() {
                                 Delete
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                     {/* End of ROW */}
 
-                    <div className="table-body row">
-                        <div className="grid-item checkbox-container">
-                            <input type="checkbox" />
+                    {5 > 9 ? (
+                        <div style={{ marginTop: "2rem" }}>
+                            Items to be deleted: {0}
                         </div>
-                        <div className="grid-item test">1</div>
-                        <div className="grid-item">This is a title</div>
-                        <div className="grid-item action-button-container">
-                            <button className="action-button edit">
-                                Edit
-                            </button>
-
-                            <button className="action-button delete">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
+                    ) :
+                        (
+                            <div style={{ marginTop: "2rem" }}>
+                                <p>No items selected</p>
+                            </div>
+                        )
+                    }
 
                     <div className="admin-table-bottom-container">
-                        <button className="action-button-delete-all">
+                        <button className=
+                            {`action-button-delete-all 
+                            ${5 > 7 ? "active" : ""}`
+                            }>
                             Delete all
                         </button>
                         <button className="action-button-new-post">
