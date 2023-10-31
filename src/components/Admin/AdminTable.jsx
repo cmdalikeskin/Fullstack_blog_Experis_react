@@ -10,7 +10,16 @@ import { useNavigate } from "react-router-dom";
 function AdminTable() {
     //Data retrieved using axios.get inside the CreateContext component
     const dataContext = blogContextData();
+
+    //container for multiple items deletion
     const [selectedValues, setSelectedValues] = useState([])
+    //container for single item deletion
+    const [singleItemToDelete, setSingleItemToDelete] = useState([])
+
+    //useState that's needed to show the conditional rendering for deletion of item(s)
+    const [singleItemConditional, setSingleItemConditional] = useState(false)
+    const [multipleItemsToDelete, setMultipleItemsToDelete] = useState(false)
+
 
     const deleteAllItems = (id) => {
         if (selectedValues.includes(id)) {
@@ -24,7 +33,6 @@ function AdminTable() {
         axios.delete('http://localhost:4000/admin/edit', { data: selectedValues })
             .then(response => {
                 console.log('Blogs deleted successfully');
-                // Reload the page after deletion
                 window.location.reload();
             })
             .catch(error => {
@@ -37,14 +45,27 @@ function AdminTable() {
         axios.delete('http://localhost:4000/admin/edit', { data: [deleteID] })
             .then(response => {
                 console.log('Blogs deleted successfully');
-                // Reload the page after deletion
+
                 window.location.reload();
             })
             .catch(error => {
                 console.error('Error deleting blogs:', error);
             });
-
     }
+
+
+    //Functions to show or hide confirmation of deletion
+    const deleteSingleConfirm = (id) => {
+        setSingleItemToDelete(id)
+        setMultipleItemsToDelete(false)
+        setSingleItemConditional(true)
+    }
+
+    const deleteMultipleDataConfirm = (id) => {
+        setSingleItemConditional(false)
+        setMultipleItemsToDelete(true)
+    }
+
 
     return (
         <>
@@ -77,31 +98,10 @@ function AdminTable() {
                                 title={data.title}
                                 deleteAllItems={deleteAllItems}
                                 deleteSingleItem={deleteSingleItem}
+                                deleteSingleConfirm={deleteSingleConfirm}
                             />
-
-
-
                         ))}
 
-                    {/* Start of ROW */}
-                    {/* <div className="table-body row">
-                        <div className="grid-item checkbox-container">
-                            <input type="checkbox" />
-                        </div>
-                        <div className="grid-item test">1</div>
-                        <div className="grid-item">This is a title TXT</div>
-                        <div className="grid-item action-button-container">
-                            <Link to='admin/'
-                            <button className="action-button edit" onClick={() => handleIdClicked(4)}>
-                                Edit
-                            </button>
-
-                            <button className="action-button delete">
-                                Delete
-                            </button>
-                        </div>
-                    </div> */}
-                    {/* End of ROW */}
                     <div className="delete-text-counter">
                         {selectedValues.length > 0 ? (
                             <div style={{ marginTop: "2rem" }}>
@@ -115,6 +115,45 @@ function AdminTable() {
                             )
                         }
                     </div>
+
+                    {/* DELETE CONFIRMATIONS BUTTONS */}
+                    <div className="delete-items-text">
+                        {
+                            singleItemConditional &&
+                            (
+                                <div style={{ marginTop: "2rem" }}>
+                                    <p> <strong>Are you sure that you want to delete the item?</strong></p>
+                                    <button className="conditional-button-yes"
+                                        onClick={() => deleteSingleItem(singleItemToDelete)}
+                                    >
+                                        Yes
+                                    </button>
+                                    <button className="conditional-button-cancel">
+                                        Cancel
+                                    </button>
+                                </div>
+                            )
+                        }
+
+                        {
+                            multipleItemsToDelete && (
+                                <div style={{ marginTop: "2rem" }}>
+                                    <p> <strong>You're about to delete multiple items, are you sure?</strong></p>
+                                    <button className="conditional-button-yes"
+                                        onClick={
+                                            deleteAllBlogs}
+                                    >
+                                        Yes
+                                    </button>
+                                    <button className="conditional-button-cancel">
+                                        Cancel
+                                    </button>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    {/* BOTTOM BUTTONS */}
                     <div className="admin-table-bottom-container">
                         {!selectedValues.length > 0 ?
                             <button className=
@@ -124,11 +163,9 @@ function AdminTable() {
                             :
                             <button className=
                                 {`action-button-delete-all active`}
-                                onClick={deleteAllBlogs}>
+                                onClick={deleteMultipleDataConfirm}>
                                 Delete all
                             </button>
-
-
                         }
 
                         <Link to='/admin/new-blog'>

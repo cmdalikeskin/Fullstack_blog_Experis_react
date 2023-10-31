@@ -126,6 +126,44 @@ CHECKBOXES AND BUTTONS OF TABLE
     padding-left: 1rem;
 }
 
+.conditional-button-yes,
+.conditional-button-cancel{
+    display: inline-block;
+    padding:0.3rem 0.5rem;
+    margin-top:1rem;
+}
+
+.conditional-button-yes{
+    background-color: #007bff;
+    margin-right:1rem;
+    color: white;
+    border-radius: 4px;
+    border: transparent;
+    padding: 0.5rem 0.7rem;
+    margin-left: auto;
+    margin-right: 35px;
+    transition: all 0.1s ease;
+}
+
+.conditional-button-yes:hover{
+    background-color: #0366d1;
+    transition: all 0.3s ease;
+}
+
+.conditional-button-cancel{
+    background-color: #d8d8d8;
+    margin-right:1rem;
+    color: rgb(46, 46, 46);
+    border-radius: 4px;
+    border: transparent;
+    padding: 0.5rem 0.7rem;
+    transition: all 0.1s ease;
+}
+
+.conditional-button-cancel:hover{
+    background-color: #c5c5c5;
+    transition: all 0.3s ease;
+}
 
 
 /*

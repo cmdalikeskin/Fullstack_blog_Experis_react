@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function AdminTableItem({ id, title, deleteAllItems, deleteSingleItem }) {
+function AdminTableItem({ id, title, deleteAllItems, deleteSingleItem,deleteSingleConfirm }) {
     return (
         <div className="table-body row">
             <div className="grid-item checkbox-container">
@@ -18,7 +18,7 @@ function AdminTableItem({ id, title, deleteAllItems, deleteSingleItem }) {
                 </Link>
 
                 <button className="action-button delete" 
-                onClick={() =>deleteSingleItem(id)}
+                onClick={() =>deleteSingleConfirm(id)}
                 >
                     Delete
                 </button>
