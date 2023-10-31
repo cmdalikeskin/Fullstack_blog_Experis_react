@@ -21,6 +21,11 @@ export const MyProvider = ({ children }) => {
     }, [])
 
 
+    const updateBlogData = (newData) => {
+        setBlogData([...blogData, newData]);
+      };
+
+
     return (
         <BlogContext.Provider value={dataContext}>
             {children}

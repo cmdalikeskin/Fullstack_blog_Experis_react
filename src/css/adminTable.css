@@ -3,7 +3,8 @@
 }
 
 button,
-input {
+.action-button-delete-all.active,
+.admin-table-container .grid-container input{
     cursor: pointer;
 }
 
@@ -134,6 +135,11 @@ BOTTOM CONTAINER AND BUTTONS
 .admin-table-bottom-container {
     margin-top: 2rem;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.delete-text-counter{
+    height:1rem;
 }
 
 .action-button-delete-all {
@@ -144,6 +150,7 @@ BOTTOM CONTAINER AND BUTTONS
     margin-left: 35px;
     background-color: transparent;
     cursor: default;
+    transition: all 0.3s ease;
 }
 
 .action-button-delete-all.active {
@@ -153,7 +160,7 @@ BOTTOM CONTAINER AND BUTTONS
     padding: 0.5rem 0.7rem;
     margin-left: 35px;
     background-color: transparent;
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
 
 }
 

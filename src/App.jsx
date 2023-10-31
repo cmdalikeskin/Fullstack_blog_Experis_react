@@ -6,8 +6,12 @@ import BlogsMain from './components/Blogs/BlogsMain'
 import Blogpage from './components/Blogs/Blogpage'
 import DeleteThisLater from './components/DeleteThisLater'
 import AdminTable from './components/Admin/AdminTable'
+import AdminNewPost from './components/Admin/AdminNewPost'
+
 
 import Footer from "./components/Footer"
+import AdminUpdatePost from './components/Admin/AdminUpdatePost'
+
 
 function App() {
 
@@ -18,10 +22,12 @@ function App() {
 
         <Routes>
           {/* <Route path='/' element={<Home />} /> */}
-          <Route path='/' element={<AdminTable />} />
+          <Route path='/' element={<Home />} />
           <Route path='/blogs' element={<BlogsMain />} />
           <Route path='/blogs/:slug' element={<Blogpage />} />
           <Route path='/admin' element={<AdminTable />} />
+          <Route path='/admin/new-blog' element={<AdminNewPost />} />
+          <Route path='/admin/edit/:updateID' element={<AdminUpdatePost/>} />
         </Routes>
 
 

@@ -1,0 +1,165 @@
+h3 {
+    font-family: sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+h3.background-line {
+    position: relative;
+    z-index: 1;
+}
+
+h3.background-line:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
+h3.background-line span {
+    background: #fff;
+    padding: 0 15px;
+}
+
+/*
+FORM CONTAINER
+*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1267px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+}
+
+/*
+FORM BLOG DETAILS
+*/
+
+.blog-details-container,
+.author-details-container {
+    padding-left: 22rem;
+}
+
+.input-container {
+    margin-top: 0.8rem;
+
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    height: 1.6rem;
+    border-radius: 3px;
+    border: 0.5px solid gray;
+    padding-left: 0.5rem;
+    cursor: text;
+}
+
+input.error{
+    border:1px solid red;
+}
+input ~ p{
+    display:none;
+}
+input.error ~ p{
+    display:block;
+    color:red;
+    font-size: 0.8rem;
+}
+
+
+
+textarea.error{
+    border:1px solid red;
+}
+
+textarea ~ p{
+    display:none;
+}
+
+textarea.error ~ p{
+    display:block;
+    color:red;
+    font-size: 0.8rem;
+}
+
+.input-container-medium {
+    width: 30%;
+}
+
+
+
+.input-container-large {
+    width: 35%;
+}
+
+.input-container-X-large {
+    width: 60%;
+}
+
+textarea {
+    padding: 0.5rem;
+    border-radius: 3px;
+
+}
+
+input:focus,
+textarea:focus {
+    outline: none
+
+}
+
+/*
+FORM AUTHOR CONTAINER
+*/
+
+.author-name-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.author-name-container .input-container .input-container-medium {
+    width: 55%;
+}
+
+#author-email {
+    width: 25%;
+}
+
+/*
+FORM BUTTON
+*/
+
+.new-blog-form-button {
+    margin-top: 3rem;
+    margin-left: 22rem;
+    padding: 0.5rem 0.7rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    border: transparent;
+    transition: all 0.1s ease;
+}
+
+
+.new-blog-form-button:hover {
+    background-color: #0366d1;
+    transition: all 0.3s ease;
+}

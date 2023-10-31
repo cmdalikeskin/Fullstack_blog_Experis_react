@@ -31,13 +31,24 @@ dl,
 p {
 	margin: 0;
 
+
+}
+
+textarea,
+input,
+ul,
+ol,
+dl,
+p {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 1rem
 }
 
 .page-filler-delete {
 	min-height: 70vh;
 }
 
-.container{
+.container {
 	width: 100%;
 	display: flex;
 	justify-content: center;
