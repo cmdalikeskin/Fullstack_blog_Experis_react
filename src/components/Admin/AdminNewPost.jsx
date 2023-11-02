@@ -8,6 +8,8 @@ const randomNumber = Math.ceil(Math.random() * 10000);
 
 function AdminNewPost() {
 
+    const [updatePUTchecker, setUpdatePUTchecker] = useState(0)
+
     //USESTATES FOR THE BLOG PART
     const [title, setTitle] = useState("");
     const [slug, setSlug] = useState("");
@@ -231,12 +233,15 @@ function AdminNewPost() {
             await axios.post("http://localhost:4000/blogs", formData)
                 .then(function (response) {
                     console.log(response);
+                    setUpdatePUTchecker(1)
                 })
                 .catch(function (error) {
                     console.log(error);
+                    setUpdatePUTchecker(2)
                 });
 
         } else {
+            setUpdatePUTchecker(2)
             console.log("not passed");
         }
     }
@@ -352,7 +357,7 @@ function AdminNewPost() {
                     <div className="author-details-container">
                         <div className="author-name-container">
                             <div className="input-container">
-                                <label htmlFor="author-first-name">Author name</label>
+                                <label htmlFor="author-first-name">First name</label>
                                 <input
                                     className="input-container-medium"
                                     type="text"
@@ -364,7 +369,7 @@ function AdminNewPost() {
                                 <p>The author first name needs <br />to be longer than 1 character</p>
                             </div>
                             <div className="input-container">
-                                <label htmlFor="author-last-name">author-first-name</label>
+                                <label htmlFor="author-last-name">Last name</label>
                                 <input
                                     className="input-container-medium"
                                     type="text"
@@ -392,6 +397,20 @@ function AdminNewPost() {
 
 
                     <div className="form-button-container">
+                        {updatePUTchecker === 0 ? (
+                            <div className="update-container">
+                                <p></p>
+                            </div>
+                        ) : updatePUTchecker === 1 ? (
+                            <div className="update-container accepted">
+                                <p>The blog has been posted.</p>
+                            </div>
+                        ) : updatePUTchecker === 2 ? (
+                            <div className="update-container denied">
+                                <p>Something went wrong updating the post.</p>
+                            </div>
+                        ) : null}
+
                         <button className="new-blog-form-button"
                             type="submit"
                             onClick={

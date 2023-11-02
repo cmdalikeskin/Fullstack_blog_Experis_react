@@ -45,11 +45,22 @@ p {
 }
 
 .page-filler-delete {
-	min-height: 70vh;
+	min-height: 650px;
 }
 
 .container {
 	width: 100%;
 	display: flex;
 	justify-content: center;
+}
+
+:root {
+    --container-width: 1156px;
+    --medium-container-width: 700px;
+    --transition-speed: 0.4s;
+    --primary-color: #008cba;
+    --secondary-color: #18191b;
+    --white-background: white;
+    --light-gray: rgb(224, 224, 224);
+    --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

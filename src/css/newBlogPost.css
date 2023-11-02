@@ -72,31 +72,33 @@ input {
     cursor: text;
 }
 
-input.error{
-    border:1px solid red;
+input.error {
+    border: 1px solid red;
 }
-input ~ p{
-    display:none;
+
+input~p {
+    display: none;
 }
-input.error ~ p{
-    display:block;
-    color:red;
+
+input.error~p {
+    display: block;
+    color: red;
     font-size: 0.8rem;
 }
 
 
 
-textarea.error{
-    border:1px solid red;
+textarea.error {
+    border: 1px solid red;
 }
 
-textarea ~ p{
-    display:none;
+textarea~p {
+    display: none;
 }
 
-textarea.error ~ p{
-    display:block;
-    color:red;
+textarea.error~p {
+    display: block;
+    color: red;
     font-size: 0.8rem;
 }
 
@@ -123,7 +125,6 @@ textarea {
 input:focus,
 textarea:focus {
     outline: none
-
 }
 
 /*
@@ -146,10 +147,73 @@ FORM AUTHOR CONTAINER
 /*
 FORM BUTTON
 */
+.form-button-container {
+    margin-top: 1rem;
+    margin-left: 22rem;
+}
+
+
+/* 
+IF UPDATING BLOG HAS BEEN ACCEPTED
+*/
+.update-container.accepted {
+    background-color: rgb(133, 237, 133);
+    padding: 0.3rem;
+    border-radius: 3px;
+    border: rgb(82, 192, 82) 1px solid;
+    width: 35%;
+    position: relative;
+}
+
+.update-container.accepted ::after {
+    content: "";
+    background-image: url("/src/assets/accepted.png");
+    position: absolute;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+/* 
+IF UPDATING BLOG HAS FAILED
+*/
+
+.update-container.denied {
+    background-color: #ff5e7e;
+    padding: 0.3rem;
+    border-radius: 3px;
+    border:#7a031a 1px solid;
+    width: 44%;
+    position: relative;
+    color:white;
+}
+
+.update-container.denied ::after {
+    content: "";
+    background-image: url("/src/assets/denied.png");
+    position: absolute;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
 
 .new-blog-form-button {
-    margin-top: 3rem;
-    margin-left: 22rem;
+    margin-top: 1rem;
     padding: 0.5rem 0.7rem;
     background-color: #007bff;
     color: white;

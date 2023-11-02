@@ -1,0 +1,34 @@
+.banner {
+    background:
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.1), rgb(12, 12, 12, 0.8)),
+        url('https://images.unsplash.com/photo-1594398985750-3b54ec074a0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+    /* background: linear-gradient(); */
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 5rem);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-text h1 {
+    color: var(--white-background)
+}
+
+.hero-text span {
+    margin-left: 6rem;
+}
+
+.banner div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#hero-name {
+    display: block;
+    font-size: 3.4rem;
+    color: var(--primary-color);
+}

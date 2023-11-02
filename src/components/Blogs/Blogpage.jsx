@@ -40,7 +40,7 @@ function Blogpage() {
       {isLoading ? (<Loading />) : (
         <div className="blogpage-container">
           <div className="blogpage-img-container">
-            <img src={blogData.bannerURL} alt="{blogData.title}" />
+            <img src={blogData.bannerURL} alt={blogData.title} />
           </div>
 
           <div className="blogpage-content-container">

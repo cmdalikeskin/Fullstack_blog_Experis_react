@@ -8,6 +8,7 @@ const randomNumber = Math.ceil(Math.random() * 10000);
 function AdminUpdatePost() {
     const { updateID } = useParams();
     const [isLoading, setIsLoading] = useState(true)
+    const [updatePUTchecker, setUpdatePUTchecker] = useState(0)
 
 
     const getBlogById = () => {
@@ -103,7 +104,7 @@ function AdminUpdatePost() {
         }
     }
 
-    
+
     //FORM HANDLER FOR THE BLOG INTRODUCTION
     const blogIntroChecker = (e) => {
         setBlogIntro(e.target.value)
@@ -259,9 +260,11 @@ function AdminUpdatePost() {
         if (validationPassed) {
             await axios.put(`http://localhost:4000/admin/edit/${updateID}`, formData)
                 .then(function (response) {
+                    setUpdatePUTchecker(1)
                     console.log(response);
                 })
                 .catch(function (error) {
+                    setUpdatePUTchecker(2)
                     console.log(error);
                 });
 
@@ -441,7 +444,26 @@ function AdminUpdatePost() {
                         </div>
 
 
+
+
+
+
                         <div className="form-button-container">
+                            {updatePUTchecker === 0 ? (
+                                <div className="update-container">
+                                    <p></p>
+                                </div>
+                            ) : updatePUTchecker === 1 ? (
+                                <div className="update-container accepted">
+                                    <p>The item has been updated.</p>
+                                </div>
+                            ) : updatePUTchecker === 2 ? (
+                                <div className="update-container denied">
+                                    <p>Something went wrong updating the post.</p>
+                                </div>
+                            ) : null}
+
+
                             <button className="new-blog-form-button"
                                 type="submit"
                                 onClick={

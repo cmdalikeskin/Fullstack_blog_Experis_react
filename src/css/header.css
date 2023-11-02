@@ -1,10 +1,18 @@
 header {
-    background-color:#2d2d32;
-    color: white;
+    background-color: #fefeff;
+
     display: flex;
     justify-content: center;
-
+    -webkit-box-shadow: 5px -16px 36px 1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px -16px 36px 1px rgba(66, 68, 90, 1);
+    box-shadow: 5px -16px 36px 1px rgba(66, 68, 90, 1);
 }
+
+header+.blog-content-container,
+header+.main-header.container {
+    margin-top: 3rem;
+}
+
 
 .header-container {
     display: flex;
@@ -20,13 +28,21 @@ header {
     align-items: center;
 }
 
-header a {
-    color: white;
+header a,
+header p {
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
 .logo-container img {
     width: 50px;
     margin-right: 1.5rem;
+
 }
 
 .nav-ul li {
@@ -37,5 +53,32 @@ header a {
 .header-container-left,
 .header-container-right {
     padding: 0.9rem 1.5rem;
+}
 
+
+.nav-ul li {
+    position: relative;
+    transition: 0.2s all ease;
+}
+
+.nav-ul li:hover a {
+    color: var(--primary-color);
+    transition: 0.2s all ease;
+}
+
+.nav-ul li ::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    transition: 0.2s all ease;
+}
+
+.nav-ul li:hover ::before {
+    width: 100%;
+    transition: 0.2s all ease;
 }

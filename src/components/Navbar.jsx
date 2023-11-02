@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import facebook from '../assets/facebook.png'
+import logo from '../assets/demo-logo.png'
 import '../css/header.css'
 
 function Navbar() {
@@ -7,14 +7,14 @@ function Navbar() {
         <header>
             <div className='header-container'>
                 <div className='header-container-left'>
-                    <div className='header-logo'>
-                        <div className='logo-container'>
-                            <img src={facebook} alt="" />
+                    <a href='http://localhost:5173' className='logo-container'>
+                        <div className=''>
+                            <img src={logo} alt="" />
                         </div>
                         <div>
                             <p>Ali's Full Stack Blog</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div className='header-container-right'>

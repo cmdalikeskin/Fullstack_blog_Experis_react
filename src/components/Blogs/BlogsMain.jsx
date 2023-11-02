@@ -26,7 +26,9 @@ function Blogs() {
           {isLoading ?
             <Loading />
             :
-            data.map(content => (
+            data
+            .sort((a, b) => a.id < b.id ? 1 : -1)
+            .map(content => (
               <BlogItem
                 id={content.id}
                 title={content.title}

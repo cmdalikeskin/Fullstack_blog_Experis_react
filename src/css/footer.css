@@ -3,7 +3,7 @@
 }
 
 .footer{
-    background-color: #2d2d32;
+    background-color: var(--secondary-color);
 }
 
 .sb__footer{
@@ -118,7 +118,6 @@ hr{
         margin-left: 0rem;
         margin-top: 1rem;
     }
-
 
 }
 
