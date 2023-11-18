@@ -11,61 +11,58 @@ function Footer() {
                     <div className='sb__footer-links'>
                         <div className='sb__footer-links-div'>
                             <h4>
-                                For Business
+                                Front-end techniques
                             </h4>
                             <a href="#">
-                                <p>Employer</p>
+                                <p>HTML</p>
                             </a>
                             <a href="#">
-                                <p>health plan</p>
+                                <p>CSS (vanilla)</p>
                             </a>
                             <a href="#">
-                                <p>Individual</p>
+                                <p>Javascript</p>
+                            </a>
+                            <a href="#">
+                                <p>React</p>
                             </a>
 
                         </div>
 
                         <div className='sb__footer-links-div'>
                             <h4>
-                                Resources
+                                Back-End techniques
                             </h4>
                             <a href="#">
-                                <p>Resource one </p>
+                                <p>Java </p>
                             </a>
                             <a href="#">
-                                <p>Resource two</p>
+                                <p>Spring Boot</p>
                             </a>
                             <a href="#">
-                                <p>Resource three</p>
+                                <p>PostgreSQL</p>
                             </a>
+                            <a href="#">
+                                <p>Hibernate</p>
+                            </a>
+
 
                         </div>
                         <div className='sb__footer-links-div'>
                             <h4>
-                                Company
+                                Contact
                             </h4>
                             <a href="#">
-                                <p>Resource one </p>
+                                <p>LinkedIN</p>
                             </a>
                             <a href="#">
-                                <p>Resource two</p>
+                                <p>E-mail</p>
                             </a>
                             <a href="#">
-                                <p>Resource three</p>
+                                <p>Phone number: +6 123 456 78</p>
                             </a>
 
                         </div>
-                        <div className='sb__footer-links-div'>
-                            <h4>
-                                Coming Soon
-                            </h4>
-                            <div className='socialmedia'>
-                                <p><img src={facebook} alt="" /></p>
-                                <p><img src={facebook} alt="" /></p>
-                                <p><img src={facebook} alt="" /></p>
-                                <p><img src={facebook} alt="" /></p>
-                            </div>
-                        </div>
+
                     </div>
 
                     <hr />
